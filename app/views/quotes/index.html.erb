@@ -5,11 +5,13 @@
     <blockquote class="quote">
       <%= quote.text %>
       <footer class="author">
-        <%= quote.autor %>
+        <%= quote.author %>
       </footer>
     </blockquote>
     <div class="created">
-      <%= time_ago_in_words(quote.created_at) %> ago
+      <% if quote.created_at != nil %>
+        <%= time_ago_in_words(quote.created_at) %> ago
+      <% end %>
     </div>
   </section>
 <% end %>
